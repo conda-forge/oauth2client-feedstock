@@ -1,19 +1,21 @@
 {%set name = "oauth2client" %}
 {%set version = "4.0.0" %}
+{%set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
 {%set hash_val = "80be5420889694634b8517b4acd3292ace881d9d1aa9d590d37ec52faec238c7" %}
+{%set build_num = "0" %}
 
 package:
-  name: {{ name }}
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  fn: {{ name }}-{{ version }}.{{ compress_type }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
   {{ hash_type }}: {{ hash_val }}
 
 build:
-  number: 0
+  number: {{ build_num }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
@@ -37,9 +39,13 @@ test:
     - oauth2client.contrib
 
 about:
-  home: http://github.com/google/oauth2client/
-  license: Apache 2.0 and MIT
-  summary: 'OAuth 2.0 client library'
+  home: https://github.com/google/oauth2client/
+  license_file: LICENSE
+  license: Apache 2.0
+  license_family: Apache
+  summary: OAuth 2.0 client library
+  dev_url: https://github.com/google/oauth2client/
+  doc_url: https://oauth2client.readthedocs.io/en/latest/
 
 extra:
   recipe-maintainers:
