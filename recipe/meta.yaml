@@ -1,27 +1,27 @@
 {%set name = "oauth2client" %}
-{%set version = "2.2.0" %}
+{%set version = "4.0.0" %}
+{%set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "53d40b5a2d7fc5d36289f4848a0d763df479ac50ba5fac05424903b9e4caac26" %}
+{%set hash_val = "80be5420889694634b8517b4acd3292ace881d9d1aa9d590d37ec52faec238c7" %}
+{%set build_num = 0 %}
 
 package:
-  name: {{ name }}
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  fn: {{ name }}-{{ version }}.{{ compress_type }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
   {{ hash_type }}: {{ hash_val }}
 
 build:
-  number: 0
+  number: {{ build_num }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
   build:
     - python
     - setuptools
-    - rsa >=3.1.4
-    - six >=1.6.1
 
   run:
     - python
@@ -37,9 +37,14 @@ test:
     - oauth2client.contrib
 
 about:
-  home: http://github.com/google/oauth2client/
-  license: Apache 2.0 and MIT
+  home: https://github.com/google/oauth2client/
+  # license_file: not in current version, will be in next build
+  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
+  license: Apache 2.0
+  license_family: Apache
   summary: 'OAuth 2.0 client library'
+  dev_url: https://github.com/google/oauth2client/
+  doc_url: https://oauth2client.readthedocs.io/en/latest/
 
 extra:
   recipe-maintainers:
