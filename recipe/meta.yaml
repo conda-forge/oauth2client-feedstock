@@ -3,7 +3,7 @@
 {%set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
 {%set hash_val = "80be5420889694634b8517b4acd3292ace881d9d1aa9d590d37ec52faec238c7" %}
-{%set build_num = "0" %}
+{%set build_num = 0 %}
 
 package:
   name: {{ name|lower }}
@@ -22,8 +22,6 @@ requirements:
   build:
     - python
     - setuptools
-    - rsa >=3.1.4
-    - six >=1.6.1
 
   run:
     - python
@@ -40,10 +38,11 @@ test:
 
 about:
   home: https://github.com/google/oauth2client/
-  license_file: LICENSE
+  # license_file: not in current version, will be in next build
+  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
   license: Apache 2.0
   license_family: Apache
-  summary: OAuth 2.0 client library
+  summary: 'OAuth 2.0 client library'
   dev_url: https://github.com/google/oauth2client/
   doc_url: https://oauth2client.readthedocs.io/en/latest/
 
