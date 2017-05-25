@@ -1,8 +1,8 @@
 {%set name = "oauth2client" %}
-{%set version = "4.0.0" %}
+{%set version = "4.1.0" %}
 {%set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "80be5420889694634b8517b4acd3292ace881d9d1aa9d590d37ec52faec238c7" %}
+{%set hash_val = "cd0a259a5d354fc7fcea5f1dc3f037e80f06091bc0303251ae177f92bb949e7f" %}
 {%set build_num = 0 %}
 
 package:
