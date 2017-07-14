@@ -1,8 +1,8 @@
 {% set name = "oauth2client" %}
-{% set version = "4.1.1" %}
+{% set version = "4.1.2" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "fd02b705092b76f443028328eaed366135f26c0d3e52bdbf66e649a944938ca1" %}
+{% set hash = "bd3062c06f8b10c6ef7a890b22c2740e5f87d61b6e1f4b1c90d069cdfc9dadb5" %}
 {% set build = 0 %}
 
 package:
