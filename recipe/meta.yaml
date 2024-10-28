@@ -41,7 +41,7 @@ test:
 about:
   home: https://github.com/google/oauth2client/
   license_file: LICENSE
-  license: Apache 2.0
+  license: Apache-2.0
   license_family: Apache
   summary: 'OAuth 2.0 client library'
   dev_url: https://github.com/google/oauth2client/
