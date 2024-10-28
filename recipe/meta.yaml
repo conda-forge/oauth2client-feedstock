@@ -22,11 +22,11 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.8
     - setuptools
 
   run:
-    - python
+    - python >=3.8
     - httplib2 >=0.9.1
     - pyasn1 >=0.1.7
     - pyasn1-modules >=0.0.5
